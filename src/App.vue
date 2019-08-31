@@ -1,29 +1,38 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" class="min-h-screen flex flex-col">
+    <div id="nav" class="flex bg-gray-300">
+      <div class="flex-initial">
+        Nome applicazione / Logo
+      </div>
+      <!--<router-link to="/">Home</router-link> |
+      <router-link to="/game">Game</router-link>-->
     </div>
-    <router-view/>
+    <router-view class="content"/>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+  }
+
+  #nav {
+    @apply p-4;
+    a {
+      font-weight: bold;
+      color: #2c3e50;
+
+      &.router-link-exact-active {
+        color: #42b983;
+      }
     }
   }
-}
+
+  .content {
+    flex: 1;
+    display: flex;
+  }
 </style>

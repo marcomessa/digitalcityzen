@@ -1,18 +1,33 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <start-game v-if="step === 1" v-on:changeEvent="changeStep" />
+    <choose-character v-if="step === 2" />
+    <choose-name v-if="step === 3" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import StartGame from '../components/home/StartGame'
+import ChooseCharacter from '../components/home/ChooseCharacter'
+import ChooseName from '../components/home/ChooseName'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    StartGame,
+    ChooseCharacter,
+    ChooseName
+  },
+  computed: {
+    step () {
+      return this.$store.state.home.step
+    }
+  },
+  methods: {
+    changeStep (delta) {
+      this.step = this.step + delta
+    }
   }
 }
 </script>

@@ -1,0 +1,13 @@
+.btn {
+    @apply border-b-2 px-4 pb-2 uppercase;
+    &:hover {
+        @apply border-gray-400;
+    }
+    &:focus {
+        @apply outline-none;
+    }
+    &:disabled {
+        opacity: .5;
+        cursor: not-allowed;
+    }
+}
