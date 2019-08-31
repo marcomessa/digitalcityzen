@@ -70,10 +70,10 @@ export default {
   }*/
   .slide-fade-rev-enter
     /* .slide-fade-leave-active below version 2.1.8 */ {
-    transform: translateX(-100%);
+    transform: translate3d(-100%, 0, 0);
     opacity: 0;
   }
   .slide-fade-rev-leave-to {
-    transform: translateX(100%);
+    transform: translate3d(100%, 0, 0);
   }
 </style>
