@@ -25,7 +25,9 @@ export default {
   },
   methods: {
     changeStep (delta) {
+      const transitionName = delta > 0 ? 'slide-fade' : 'slide-fade-rev'
       this.$store.dispatch('home/changeStep', delta)
+      this.$store.dispatch('home/changeTransition', transitionName)
     }
   }
 }

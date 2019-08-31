@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="min-h-screen flex flex-col">
+  <div id="app" class="min-h-screen">
     <div id="nav" class="flex bg-gray-300">
       <div class="flex-initial">
         Nome applicazione / Logo
@@ -7,7 +7,7 @@
       <!--<router-link to="/">Home</router-link> |
       <router-link to="/game">Game</router-link>-->
     </div>
-    <router-view class="content"/>
+    <router-view />
   </div>
 </template>
 
@@ -29,10 +29,5 @@
         color: #42b983;
       }
     }
-  }
-
-  .content {
-    flex: 1;
-    display: flex;
   }
 </style>
