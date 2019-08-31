@@ -13,6 +13,9 @@ const actions = {
   },
   setName ({commit}, name) {
     commit('SET_NAME', name)
+  },
+  reset ({commit}) {
+    commit('RESET')
   }
 }
 
@@ -22,6 +25,10 @@ const mutations = {
   },
   SET_NAME: (state, name) => {
     state.name = name
+  },
+  RESET: (state) => {
+    state.sex = false
+    state.name = ''
   }
 }
 
