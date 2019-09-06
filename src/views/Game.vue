@@ -1,6 +1,6 @@
 <template>
   <div class="game flex flex-wrap relative">
-    <sidebar />
+    <sidebar :story="story" />
     <div class="w-full md:w-3/4 flex flex-col flex-grow h-full justify-between relative">
       <game-canvas ref="gameCanvas" v-on:readAll="setReadAll" :story="story" />
       <bottombar v-on:changeStep="changeStep" :readAll="readAll" :story="story" />

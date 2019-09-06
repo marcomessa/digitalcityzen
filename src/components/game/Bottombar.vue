@@ -33,7 +33,6 @@ export default {
   methods: {
     changeStep (stepId) {
       this.$store.dispatch('game/setStep', stepId)
-      this.$emit('changeStep')
     }
   }
 }

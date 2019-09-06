@@ -4,7 +4,7 @@
     <avatar/>
     <div class="flex flex-col flex-grow w-full items-center">
       <div v-for="(counter, index) in steps" :key="index">
-        <transition :duration="1000" appear="" name="timeline" v-if="counter <= step">
+        <transition :duration="1000" appear="" name="timeline" v-if="counter <= currentStep">
           <div class="timeline-slot">
             <div v-if="counter !== 1" class="overflow-hidden">
               <div class="line"></div>
@@ -27,6 +27,9 @@ export default {
   components: {
     Avatar
   },
+  props: {
+    story: Object
+  },
   data () {
     return {
       step: 1
@@ -43,8 +46,12 @@ export default {
       return this.$store.state.home.isMenuOpen
     },
     steps () {
-      return this.$store.state.game.story.steps.length
+      return this.story.steps.length
+    },
+    currentStep () {
+      return this.$store.state.game.currentStep
     }
+
   }
 }
 </script>
