@@ -1,5 +1,5 @@
 const state = {
-  currentStep: 1
+  showOptions: false
 }
 
 const getters = {
@@ -7,15 +7,15 @@ const getters = {
 }
 
 const actions = {
-  setStory ({ commit }, story) {
-    commit('SET_STORY', story)
+  showOptions ({ commit }, bool) {
+    commit('SHOW_OPTIONS', bool)
   }
 
 }
 
 const mutations = {
-  SET_STEP: (state, step) => {
-    state.currentStep = step
+  SHOW_OPTIONS: (state, bool) => {
+    state.showOptions = bool
   }
 }
 

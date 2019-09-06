@@ -1,13 +1,13 @@
 <template>
   <div class="bottombar flex-grow flex flex-col justify-between md:h-32 px-4 pt-6 pb-0">
-    <p>
+    <p class="md:text-md font-light font-roboto text-center">
       {{currentStep.description}}
     </p>
     <div class="flex justify-center py-10 md:py-2">
       <div v-for="(option, key) in currentStep.options"
            :key="key"
            class="flex-initial">
-        <button v-if="readAll" class="btn btn-default" @click="changeStep(option.goTo)">
+        <button v-if="showOptions" class="btn btn-default" @click="changeStep(option.goTo)">
           {{option.text}}
         </button>
       </div>
@@ -28,11 +28,15 @@ export default {
     currentStep () {
       const currentStepId = this.$store.state.game.currentStep
       return this.story.steps.find(step => step.id === currentStepId)
+    },
+    showOptions () {
+      return this.$store.state.bottomBar.showOptions
     }
   },
   methods: {
     changeStep (stepId) {
       this.$store.dispatch('game/setStep', stepId)
+      this.$store.dispatch('bottomBar/showOptions', false)
     }
   }
 }
@@ -46,15 +50,6 @@ export default {
     background-color: #000;
     &:hover {
       opacity: 1;
-    }
-    @screen md {
-      position: absolute;
-      transform: translate(-50%, -50%);
-      bottom: 0;
-      left:50%;
-      width: 80%;
-      opacity: .3;
-      background-color: transparent;
     }
   }
 </style>

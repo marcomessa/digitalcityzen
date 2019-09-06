@@ -153,7 +153,7 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
-      'slide': 'calc(100vh - 56px)'
+      'slide': 'calc(100vh - 56px - 128px)'
     },
     backgroundColor: theme => theme('colors'),
     backgroundPosition: {
@@ -231,6 +231,10 @@ module.exports = {
       sans: [
         'Manjari',
         'sans-serif',
+      ],
+      roboto: [
+        'Roboto',
+        'sans-serif'
       ],
       serif: [
         'Georgia',
