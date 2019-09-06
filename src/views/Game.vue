@@ -2,8 +2,8 @@
   <div class="game flex flex-wrap relative">
     <sidebar />
     <div class="w-full md:w-3/4 flex flex-col flex-grow h-full justify-between relative">
-      <game-canvas v-on:readAll="setReadAll" :story="story" />
-      <bottombar :readAll="readAll" :story="story" />
+      <game-canvas ref="gameCanvas" v-on:readAll="setReadAll" :story="story" />
+      <bottombar v-on:changeStep="changeStep" :readAll="readAll" :story="story" />
     </div>
 
   </div>
@@ -29,6 +29,10 @@ export default {
   methods: {
     setReadAll (value) {
       this.readAll = value
+    },
+    changeStep () {
+      console.log( 'change' );
+      this.$refs.gameCanvas.resetFrame()
     }
   },
   mounted () {
@@ -44,6 +48,8 @@ export default {
 
 <style lang="scss" scoped>
   .game {
-    min-height: calc(100vh - 56px);
+    @screen md {
+      min-height: calc(100vh - 56px);
+    }
   }
 </style>

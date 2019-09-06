@@ -19,6 +19,7 @@
       "id": 2,
       "title": "Titolo Step 2",
       "description": "Non visti, il bullo e i complici fanno circolare il video (gruppo WhatsApp/Facebook/etc.)",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
       "options": [
         {
           "text": "Scelta 2A",

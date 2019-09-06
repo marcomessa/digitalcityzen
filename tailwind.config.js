@@ -153,6 +153,7 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
+      'slide': 'calc(100vh - 56px)'
     },
     backgroundColor: theme => theme('colors'),
     backgroundPosition: {

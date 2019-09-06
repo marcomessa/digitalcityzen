@@ -22,13 +22,16 @@
       </g>
     </svg>
     <svg v-if="type === 'toRight'" xmlns="http://www.w3.org/2000/svg" width="40.3" height="46.5" viewBox="0 0 40.3 46.5">
-      <g data-name="Livello 2">
+      <g>
+        <path class="cls-2" d="M16,14A14.13,14.13,0,0,1,30.13,28.13, M2,0A14.22,14.22,0,0,0,16.28,14"/>
+        <circle class="circle" cx="30.55" cy="36.75" r="9.75"/>
+      </g>
+      <!--<g data-name="Livello 2">
         <circle class="cls-1" cx="30.55" cy="36.75" r="9.75"/>
         <g>
-          <path class="cls-2" d="M16,14A14.13,14.13,0,0,1,30.13,28.13"/>
-          <path class="cls-2" d="M2,0A14.22,14.22,0,0,0,16.28,14"/>
+          <path class="cls-2" d="M16,14A14.13,14.13,0,0,1,30.13,28.13, M2,0A14.22,14.22,0,0,0,16.28,14"/>
         </g>
-      </g>
+      </g>-->
     </svg>
 
   </div>
@@ -49,13 +52,15 @@ export default {
   },
   mounted () {
     anime({
-      targets: '.svg-wrapper',
+      targets: '.svg-wrapper path',
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       duration: 1500,
       delay: function(el, i) { return i * 250 },
-      direction: 'alternate',
-      loop: true
+      loop: false,
+      complete: function(anim) {
+        console.log( this )
+      }
     })
   }
 }

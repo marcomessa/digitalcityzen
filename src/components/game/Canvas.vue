@@ -48,6 +48,9 @@ export default {
       if (this.currentFrame === this.step.frames.length - 1) {
         this.$emit('readAll', true)
       }
+    },
+    resetFrame () {
+      this.currentFrame = 0
     }
   }
 }
@@ -61,14 +64,8 @@ export default {
 
   @screen md {
     .single-slide {
-      height: calc(100vh - 56px);
+      @apply h-slide
     }
   }
 
-  /*.slide {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
-  }*/
 </style>
