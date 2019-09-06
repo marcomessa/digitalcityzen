@@ -1,6 +1,8 @@
+const debug = process.env.VUE_APP_DEBUG
+
 const state = {
-  sex: false,
-  name: ''
+  sex: 'mars',
+  name: 'Marcus Maas'
 }
 
 const getters = {

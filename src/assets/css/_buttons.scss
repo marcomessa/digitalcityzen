@@ -1,5 +1,9 @@
 .btn {
-    @apply border-b-2 px-4 pb-2 uppercase;
+    @apply px-8 pt-3 pb-1 uppercase rounded-full font-bold;
+    line-height: 1;
+    &.btn-default {
+        @apply bg-palette1-first text-palette1-third;
+    }
     &:hover {
         @apply border-gray-400;
     }

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40.3" height="46.5" viewBox="0 0 40.3 46.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #79e0e7;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #79e0e7;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <title>toLeft</title>
+  <g id="Livello_2" data-name="Livello 2">
+    <g id="Mappa">
+      <g>
+        <circle class="cls-1" cx="9.75" cy="36.75" r="9.75"/>
+        <g>
+          <path class="cls-2" d="M24.26,14A14.13,14.13,0,0,0,10.17,28.13"/>
+          <path class="cls-2" d="M38.3,0A14.22,14.22,0,0,1,24,14"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

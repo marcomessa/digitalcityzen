@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="514.5" height="884" viewBox="0 0 514.5 884">
+    <defs>
+        <style>
+            .cls-1 {
+            fill: none;
+            stroke: #000;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 137px;
+            }
+        </style>
+    </defs>
+    <g data-name="Livello 2">
+        <polyline class="cls-1" points="446 68.5 68.5 446 446 815.5"/>
+    </g>
+</svg>

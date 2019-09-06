@@ -34,8 +34,17 @@ export default {
 
 <style scoped>
   .home {
-    height: calc(100vh - 56px);
+    height: calc(100vh - 56px - 72px);
     position: relative;
+    background-image: url(./../assets/img/citta.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 50%;
+  }
+  @screen md {
+    .home {
+
+    }
   }
   .slide-fade-enter-active, .slide-fade-leave-active {
     transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);

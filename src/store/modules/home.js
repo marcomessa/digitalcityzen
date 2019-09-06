@@ -1,6 +1,9 @@
+const debug = process.env.VUE_APP_DEBUG
+
 const state = {
   step: 1,
-  transitionName: 'slide-fade'
+  transitionName: 'slide-fade',
+  isMenuOpen: false
 }
 
 const getters = {
@@ -19,6 +22,9 @@ const actions = {
   },
   reset({commit}) {
     commit ('RESET')
+  },
+  toggleMenu({commit}) {
+    commit('TOGGLE_MENU')
   }
 }
 
@@ -35,6 +41,9 @@ const mutations = {
   RESET: (state) => {
     state.step = 1
     state.transitionName = 'slide-fade'
+  },
+  TOGGLE_MENU: (state) => {
+    state.isMenuOpen = !state.isMenuOpen
   }
 }
 

@@ -125,6 +125,13 @@ module.exports = {
         800: '#97266d',
         900: '#702459',
       },
+      palette1: {
+        first: '#fc9292',
+        second: '#f3eddb',
+        third: '#fcf9f1',
+        fourth: '#d6e06b',
+        fifth: '#79e0e7'
+      }
     },
     spacing: {
       px: '1px',
@@ -221,18 +228,8 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        '"Noto Sans"',
+        'Manjari',
         'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
       ],
       serif: [
         'Georgia',

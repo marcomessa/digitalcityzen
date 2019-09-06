@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="35.98" viewBox="0 0 19.5 35.98">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #79e0e7;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #79e0e7;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <title>linear_1</title>
+  <g id="Livello_2" data-name="Livello 2">
+    <g id="Mappa">
+      <g>
+        <circle class="cls-1" cx="9.75" cy="26.23" r="9.75"/>
+        <line class="cls-2" x1="9.55" y1="0.02" x2="9.73" y2="19.95"/>
+      </g>
+    </g>
+  </g>
+</svg>

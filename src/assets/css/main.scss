@@ -1,8 +1,27 @@
 @tailwind base;
 @tailwind components;
 
+@import url('https://fonts.googleapis.com/css?family=Manjari:400,700&display=swap');
 @import 'typography';
 @import 'buttons';
 @import 'home';
+@import 'hamburgers/hamburgers.scss';
+
+html, body {
+    @apply font-sans;
+}
+
+.VueCarousel-pagination {
+    position: absolute;
+    bottom: 0;
+    .VueCarousel-dot {
+        width: 6px !important;
+        height: 6px !important;
+        padding: 6px !important;
+    }
+}
+.VueCarousel-navigation {
+    position: absolute;
+}
 
 @tailwind utilities;

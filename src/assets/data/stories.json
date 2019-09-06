@@ -1,0 +1,71 @@
+{
+  "id": 1,
+  "title": "Prima Storia",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Titolo Step 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, accusamus, cupiditate dicta eaque earum eum fuga.",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Pluto",
+          "score": 0,
+          "goTo": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Titolo Step 2",
+      "description": "Non visti, il bullo e i complici fanno circolare il video (gruppo WhatsApp/Facebook/etc.)",
+      "options": [
+        {
+          "text": "Scelta 2A",
+          "score": 0,
+          "goTo": 3
+        },
+        {
+          "text": "Scelta 2B",
+          "score": 0,
+          "goTo": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Titolo Step 3",
+      "description": "Gli altri compagni visualizzano il video, e la vittima, circolando nella scuola, si accorge che gli altri lo/a osservano commentando e ridendo di lui/lei.",
+      "options": [
+        {
+          "text": "Scelta 3A",
+          "score": 0,
+          "goTo": 4
+        },
+        {
+          "text": "Scelta 3B",
+          "score": 0,
+          "goTo": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Titolo Step 4",
+      "description": "La vittima visualizza il video e comprende il motivo dei commenti (e realizza anche il senso del video che il bullo gli/le ha girato).",
+      "options": [
+        {
+          "text": "Scelta 4A",
+          "score": 0,
+          "endId": 1
+        },
+        {
+          "text": "Scelta 4B",
+          "score": 0,
+          "endId": 2
+        }
+      ]
+    }
+
+  ]
+}
