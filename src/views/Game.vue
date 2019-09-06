@@ -44,6 +44,6 @@ export default {
 
 <style lang="scss" scoped>
   .game {
-    height: calc(100vh - 56px);
+    min-height: calc(100vh - 56px);
   }
 </style>

@@ -10,7 +10,7 @@
            v-for="(slide, index) in step.frames"
            :key="index">
       <div class="flex relative single-slide justify-center items-bottom">
-        <div class="md:absolute bg-black w-full h-full">
+        <div class="md:absolute flex flex-col justify-end top-0 left-0 bg-black w-full h-full">
           <img :src="publicPath + 'img/slides/test_scene.jpg'" alt="">
         </div>
       </div>
