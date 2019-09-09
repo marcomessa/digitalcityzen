@@ -41,7 +41,7 @@ export default {
   methods: {
     changeStep (stepId) {
       this.$store.dispatch('game/setStep', stepId)
-      console.log(this.currentStep.options.length)
+      this.$store.dispatch('game/addStep', this.currentStep)
       this.$store.dispatch('bottomBar/showOptions', false)
       if (this.isAppBgChanged) {
         this.$store.dispatch('game/setBg', this.currentStep.bg)

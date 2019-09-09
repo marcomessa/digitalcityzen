@@ -5,25 +5,24 @@
   >
     <avatar />
     <div class="flex flex-col flex-grow w-full items-center py-10">
-      <div v-for="(counter, index) in steps" :key="index">
+      <div v-for="(sidebarStep, index) in sidebarSteps" :key="index">
         <transition
           :duration="1000"
           appear
-          name="timeline"
-          v-if="counter <= currentStep">
+          name="timeline">
           <div class="timeline-slot">
-            <div v-if="counter !== 1" class="overflow-hidden">
+            <div v-if="index > 0" class="overflow-hidden">
               <div class="line"></div>
             </div>
             <div class="relative">
-              <div class="dot" :class="{'old': currentStep != counter}"></div>
-              <div v-if="story.steps[counter - 1].modal !== undefined" class="text">
+              <div class="dot" :class="{'old': currentStep != index}"></div>
+              <div v-if="sidebarStep.modal !== undefined" class="text">
                 <button
-                  @click="toggleModal(counter - 1)"
-                  class="cursor-pointer"
-                >{{story.steps[counter - 1].title}}</button>
+                  @click="toggleModal(index)"
+                  class="cursor-pointer">
+                  {{sidebarStep.title}}</button>
               </div>
-              <div v-else class="text">{{story.steps[counter - 1].title}}</div>
+              <div v-else class="text">{{sidebarStep.title}}</div>
             </div>
           </div>
         </transition>
@@ -39,7 +38,7 @@
 </template>
 
 <script>
-import Avatar from './Avatar';
+import Avatar from './Avatar'
 
 export default {
   name: 'Sidebar',
@@ -51,8 +50,7 @@ export default {
   },
   data () {
     return {
-      step: 1,
-      sidebarSteps: []
+      step: 1
     }
   },
   methods: {
@@ -78,6 +76,9 @@ export default {
     },
     currentStep () {
       return this.$store.state.game.currentStep
+    },
+    sidebarSteps () {
+      return this.$store.state.game.sidebarSteps
     }
   }
 }

@@ -4,7 +4,10 @@ const state = {
   story: story,
   steps: [],
   currentStep: 1,
-  bg: '#000'
+  bg: '#000',
+  sidebarSteps: [
+    story.steps[0]
+  ]
 }
 
 const getters = {
@@ -20,6 +23,9 @@ const actions = {
   },
   setBg ({commit}, color) {
     commit('SET_BG', color)
+  },
+  addStep ({commit}, step) {
+    commit('ADD_STEP', step)
   }
 }
 
@@ -32,6 +38,9 @@ const mutations = {
   },
   SET_BG: (state, color) => {
     state.bg = color
+  },
+  ADD_STEP: (state, step) => {
+    state.sidebarSteps.push(step)
   }
 }
 
