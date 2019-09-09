@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="min-h-screen bg-palette1-third">
+  <div id="app" class="min-h-screen bg-palette1-third" :style="appBg">
     <top-bar/>
     <router-view />
     <vue-footer />
@@ -18,6 +18,20 @@ import TopBar from './components/app/TopBar'
 import VueFooter from './components/app/VueFooter'
 
 export default {
-  components: { TopBar, VueFooter }
+  components: { TopBar, VueFooter },
+  data () {
+    return {
+      appStyle: {
+        backgroundColor: this.appBg
+      }
+    }
+  },
+  computed: {
+    appBg () {
+      return {
+        backgroundColor: this.$store.state.game.bg
+      }
+    }
+  }
 }
 </script>
