@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { close } from 'fs';
 
 export default {
   name: 'Bottombar',
@@ -40,6 +41,7 @@ export default {
   methods: {
     changeStep (stepId) {
       this.$store.dispatch('game/setStep', stepId)
+      console.log(this.currentStep.options.length)
       this.$store.dispatch('bottomBar/showOptions', false)
       if (this.isAppBgChanged) {
         this.$store.dispatch('game/setBg', this.currentStep.bg)

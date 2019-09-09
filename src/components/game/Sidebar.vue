@@ -1,141 +1,184 @@
 <template>
-  <aside class="flex-grow bg-gray-200 px-4 py-12 w-full md:w-1/4 flex flex-col justify-between items-center z-10"
-         :class="{'menu-open': isMenuOpen}">
-    <avatar/>
-    <div class="flex flex-col flex-grow w-full items-center">
+  <aside
+    class="flex-grow h-slide md:h-auto bg-gray-200 px-4 py-12 w-full md:w-1/4 flex flex-col justify-between items-center z-40"
+    :class="{'menu-open': isMenuOpen}"
+  >
+    <avatar />
+    <div class="flex flex-col flex-grow w-full items-center py-10">
       <div v-for="(counter, index) in steps" :key="index">
-        <transition :duration="1000" appear="" name="timeline" v-if="counter <= currentStep">
+        <transition
+          :duration="1000"
+          appear
+          name="timeline"
+          v-if="counter <= currentStep"
+          v-on:before-enter="beforeTransitionEnter"
+        >
           <div class="timeline-slot">
             <div v-if="counter !== 1" class="overflow-hidden">
               <div class="line"></div>
             </div>
-            <div class="dot"></div>
-            <div class="text absolute">{{counter}}, {{step}}</div>
+            <div class="relative">
+              <div class="dot" :class="{'old': currentStep != counter}"></div>
+              <div v-if="story.steps[counter - 1].modal !== undefined" class="text">
+                <button
+                  @click="toggleModal(counter - 1)"
+                  class="cursor-pointer"
+                >{{story.steps[counter - 1].title}}</button>
+              </div>
+              <div v-else class="text">{{story.steps[counter - 1].title}}</div>
+            </div>
           </div>
         </transition>
       </div>
     </div>
-    <router-link @click.native="restartGame" class="btn btn-large w-2/3" to="/" tag="button">Ricomincia</router-link>
+    <router-link
+      @click.native="restartGame"
+      class="btn btn-large w-2/3"
+      to="/"
+      tag="button"
+    >Ricomincia</router-link>
   </aside>
 </template>
 
 <script>
-import Avatar from './Avatar'
+import Avatar from "./Avatar";
 
 export default {
-  name: 'Sidebar',
+  name: "Sidebar",
   components: {
     Avatar
   },
   props: {
     story: Object
   },
-  data () {
+  data() {
     return {
       step: 1
-    }
+    };
   },
   methods: {
-    restartGame () {
-      this.$store.dispatch('home/reset')
-      this.$store.dispatch('character/reset')
+    restartGame() {
+      this.$store.dispatch("home/reset");
+      this.$store.dispatch("character/reset");
+    },
+    toggleModal(step) {
+      const modalData = this.story.steps[step].modal;
+      this.$store.dispatch("modal/toggleModal", modalData);
+    },
+    beforeTransitionEnter() {
+      console.log("beforeEnter");
     }
   },
   computed: {
-    isMenuOpen () {
-      return this.$store.state.home.isMenuOpen
+    isMenuOpen() {
+      return this.$store.state.home.isMenuOpen;
     },
-    steps () {
-      return this.story.steps.length
+    steps() {
+      return this.story.steps.length;
     },
-    currentStep () {
-      return this.$store.state.game.currentStep
+    currentStep() {
+      return this.$store.state.game.currentStep;
     }
-
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  aside {
+aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  &.menu-open {
+    transform: translateX(0);
+  }
+
+  @screen md {
+    @apply w-1/4;
+    position: relative;
+    transform: translateX(0);
+  }
+}
+
+.timeline-slot {
+  .dot {
+    @apply w-6 h-6 bg-transparent border border-black rounded-full relative;
+    &:after {
+      content: "";
+      @apply absolute bg-yellow-900 rounded-full;
+      top: 50%;
+      left: 50%;
+      width: 80%;
+      height: 80%;
+      transform: translate(-50%, -50%) scale(0,0);
+      transition: transform .3s ease;
+    }
+    &.old:after {
+      transform: translate(-50%, -50%) scale(1,1);
+    }
+  }
+  .line {
+    @apply h-6 bg-black border-black;
+    width: 1px;
+    margin: 0 auto;
+  }
+  .text {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transform: translateX(-100%);
-    transition: transform .3s ease;
-
-    &.menu-open {
-      transform: translateX(0);
-    }
-
-    @screen md {
-      @apply w-1/4;
-      position: relative;
-      transform: translateX(0);
+    top: 50%;
+    right: 0;
+    width: 150px;
+    transform: translate(160px, -50%);
+    @apply text-xs;
+    button {
+      @apply font-bold underline;
     }
   }
+}
 
-  .timeline-slot {
-    @apply relative;
-    .dot {
-      @apply w-6 h-6 bg-transparent border border-black rounded-full;
-    }
-    .line {
-      @apply h-6 bg-black border-black;
-      width: 1px;
-      margin: 0 auto;
-    }
-    .text {
-      position: absolute;
-      top: 60%;
-      right: 0;
-      transform: translateX(140%);
-      @apply text-xs;
-    }
+.timeline-enter-active {
+  transition: all 0.3s ease;
+  .line {
+    transition: transform 0.3s ease;
   }
-
-  .timeline-enter-active {
-    transition: all .3s ease;
-    .line {
-      transition: transform .3s ease;
-    }
-    .text {
-      transition: transform .3s ease, opacity .3s ease;
-      transition-delay: .6s;
-    }
-    .dot {
-      transition: all .3s ease;
-      transition-delay: .3s;
-    }
+  .text {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition-delay: 0.6s;
   }
-
-  .timeline-leave-active {
-    transition: all .3s ease;
-    .line {
-      transition: transform .3s ease;
-      transition-delay: .6s;
-    }
-    .text {
-      transition: transform .3s ease, opacity .3s ease;
-    }
-    .dot {
-      transition: all .3s ease;
-      transition-delay: .3s;
-    }
+  .dot {
+    transition: all 0.3s ease;
+    transition-delay: 0.3s;
   }
+}
 
-  .timeline-enter, .timeline-leave-to {
-    .line {
-      transform: translateY(-100%);
-    }
-    .dot {
-      opacity: 0;
-    }
-    .text {
-      transform: translate(140%, -100%);
-      opacity: 0;
-    }
+.timeline-leave-active {
+  transition: all 0.3s ease;
+  .line {
+    transition: transform 0.3s ease;
+    transition-delay: 0.6s;
   }
+  .text {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .dot {
+    transition: all 0.3s ease;
+    transition-delay: 0.3s;
+  }
+}
 
+.timeline-enter,
+.timeline-leave-to {
+  .line {
+    transform: translateY(-100%);
+  }
+  .dot {
+    opacity: 0;
+  }
+  .text {
+    transform: translate(160px, -100%);
+    opacity: 0;
+  }
+}
 </style>

@@ -3,7 +3,8 @@ import story from '../../assets/data/stories'
 const state = {
   story: story,
   steps: [],
-  currentStep: 1
+  currentStep: 1,
+  bg: '#000'
 }
 
 const getters = {
@@ -16,6 +17,9 @@ const actions = {
   },
   setStep ({commit}, step) {
     commit('SET_STEP', step)
+  },
+  setBg ({commit}, color) {
+    commit('SET_BG', color)
   }
 }
 
@@ -25,6 +29,9 @@ const mutations = {
   },
   SET_STEP: (state, step) => {
     state.currentStep = step
+  },
+  SET_BG: (state, color) => {
+    state.bg = color
   }
 }
 

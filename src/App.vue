@@ -1,8 +1,9 @@
 <template>
-  <div id="app" class="min-h-screen bg-palette1-third" :style="appBg">
+  <div id="app" class="min-h-screen bg-palette1-third overflow-hidden" :style="appBg">
     <top-bar/>
     <router-view />
     <vue-footer />
+    <modal v-if="showModal" />
   </div>
 </template>
 
@@ -16,9 +17,10 @@
 <script>
 import TopBar from './components/app/TopBar'
 import VueFooter from './components/app/VueFooter'
+import Modal from './components/app/Modal'
 
 export default {
-  components: { TopBar, VueFooter },
+  components: { TopBar, VueFooter, Modal },
   data () {
     return {
       appStyle: {
@@ -31,6 +33,9 @@ export default {
       return {
         backgroundColor: this.$store.state.game.bg
       }
+    },
+    showModal () {
+      return this.$store.state.modal.showModal
     }
   }
 }

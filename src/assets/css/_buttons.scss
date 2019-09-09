@@ -1,11 +1,11 @@
 .btn {
-    @apply px-8 pt-3 pb-1 uppercase rounded-full font-bold;
+    @apply px-8 pt-3 pb-1 uppercase font-bold;
     line-height: 1;
     &.btn-default {
-        @apply bg-palette1-first text-palette1-third;
+        @apply text-palette1-third border-b;
     }
     &:hover {
-        @apply border-gray-400;
+        @apply bg-white text-black;
     }
     &:focus {
         @apply outline-none;

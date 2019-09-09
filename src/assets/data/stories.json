@@ -7,19 +7,26 @@
       "title": "Titolo Step 1",
       "description": "Andrea viene filmata da Sara mentre spiega qualcosa a un'aiutante. Andrea viene filmata da Sara mentre spiega qualcosa a un'aiutante.",
       "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "bg": "#fff",
       "options": [
         {
           "text": "Pluto",
           "score": 0,
           "goTo": 2
         }
-      ]
+      ],
+      "modal": {
+        "header": "Custom Modal Header",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique quam eu ipsum bibendum suscipit. Donec sit amet mattis ligula, <a href=\"#\">quis facilisis nisl</a>. Nam at feugiat est, quis cursus dui. Curabitur finibus quis turpis ut viverra. Vestibulum id vehicula purus, eget auctor velit. Vivamus at mi nisi. Integer pulvinar accumsan ante.",
+        "footer": "Custom Modal Footer"
+      }
     },
     {
       "id": 2,
       "title": "Titolo Step 2",
       "description": "Non visti, il bullo e i complici fanno circolare il video (gruppo WhatsApp/Facebook/etc.)",
       "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "bg": "#000",
       "options": [
         {
           "text": "Scelta 2A",
@@ -31,12 +38,19 @@
           "score": 0,
           "goTo": 3
         }
-      ]
+      ],
+      "modal": {
+        "header": "Custom Modal Header 2",
+        "body": "222 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique quam eu ipsum bibendum suscipit. Donec sit amet mattis ligula, <a href=\"#\">quis facilisis nisl</a>. Nam at feugiat est, quis cursus dui. Curabitur finibus quis turpis ut viverra. Vestibulum id vehicula purus, eget auctor velit. Vivamus at mi nisi. Integer pulvinar accumsan ante.",
+        "footer": "Custom Modal Footer 2"
+      }
     },
     {
       "id": 3,
       "title": "Titolo Step 3",
       "description": "Gli altri compagni visualizzano il video, e la vittima, circolando nella scuola, si accorge che gli altri lo/a osservano commentando e ridendo di lui/lei.",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
       "options": [
         {
           "text": "Scelta 3A",
@@ -54,6 +68,8 @@
       "id": 4,
       "title": "Titolo Step 4",
       "description": "La vittima visualizza il video e comprende il motivo dei commenti (e realizza anche il senso del video che il bullo gli/le ha girato).",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
       "options": [
         {
           "text": "Scelta 4A",

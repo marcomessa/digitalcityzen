@@ -1,5 +1,5 @@
 <template>
-    <div id="nav" class="flex justify-between bg-palette1-fourth">
+    <div id="nav" class="flex justify-between">
         <div class="flex-initial">
             Nome applicazione / Logo
         </div>
@@ -19,9 +19,9 @@ export default {
 }
 </script>
 <style lang="scss">
-
     #nav {
         @apply p-4;
+        background-color: #ffcc00;
         a {
             font-weight: bold;
             color: #2c3e50;

@@ -3,6 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Manjari:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
 @import 'typography';
 @import 'buttons';
 @import 'home';
@@ -22,7 +23,19 @@ html, body {
     }
 }
 .VueCarousel-navigation {
-    position: absolute;
+    // position: absolute;
+    .VueCarousel-navigation-button {
+        z-index: 99;
+        color: white;
+        // top: 50%;
+        // transform: translateY(-50%)
+        &.VueCarousel-navigation-prev {
+            left: 40px;
+        }
+        &.VueCarousel-navigation-next {
+            right: 40px;
+        }
+    }
 }
 
 @tailwind utilities;

@@ -6,8 +6,6 @@
             paginationColor="#666"
             paginationActiveColor="#fff"
             :navigationEnabled="true"
-            :navigationPrevLabel='`<img src="${publicPath}img/caret-left.svg" />`'
-            :navigationNextLabel='`<img src="${publicPath}img/caret-left.svg" />`'
             v-on:page-change="checkButton"
             v-if="index === currentStep">
           <slide class="single-slide"

@@ -28,7 +28,6 @@ export default {
   },
   methods: {
     changeStep () {
-      console.log( 'change' );
       this.$refs.gameCanvas.resetFrame()
     }
   },
