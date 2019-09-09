@@ -1,5 +1,5 @@
 <template>
-  <aside class="h-slide bg-gray-200 px-4 py-12 w-full md:w-1/4 flex flex-col justify-between items-center z-10"
+  <aside class="flex-grow bg-gray-200 px-4 py-12 w-full md:w-1/4 flex flex-col justify-between items-center z-10"
          :class="{'menu-open': isMenuOpen}">
     <avatar/>
     <div class="flex flex-col flex-grow w-full items-center">
