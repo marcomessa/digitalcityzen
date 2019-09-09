@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="flex-grow h-slide md:h-auto bg-gray-200 px-4 py-12 w-full md:w-1/4 flex flex-col justify-between items-center z-40"
+    class="flex-grow md:h-auto bg-gray-200 px-4 py-12 w-full md:w-1/4 flex flex-col justify-between items-center z-40"
     :class="{'menu-open': isMenuOpen}"
   >
     <avatar />
@@ -10,9 +10,7 @@
           :duration="1000"
           appear
           name="timeline"
-          v-if="counter <= currentStep"
-          v-on:before-enter="beforeTransitionEnter"
-        >
+          v-if="counter <= currentStep">
           <div class="timeline-slot">
             <div v-if="counter !== 1" class="overflow-hidden">
               <div class="line"></div>
@@ -41,46 +39,48 @@
 </template>
 
 <script>
-import Avatar from "./Avatar";
+import Avatar from './Avatar';
 
 export default {
-  name: "Sidebar",
+  name: 'Sidebar',
   components: {
     Avatar
   },
   props: {
     story: Object
   },
-  data() {
+  data () {
     return {
-      step: 1
-    };
+      step: 1,
+      sidebarSteps: []
+    }
   },
   methods: {
-    restartGame() {
-      this.$store.dispatch("home/reset");
-      this.$store.dispatch("character/reset");
+    restartGame () {
+      this.$store.dispatch('home/reset')
+      this.$store.dispatch('character/reset')
     },
-    toggleModal(step) {
-      const modalData = this.story.steps[step].modal;
-      this.$store.dispatch("modal/toggleModal", modalData);
-    },
-    beforeTransitionEnter() {
-      console.log("beforeEnter");
+    toggleModal (step) {
+      const body = document.getElementsByTagName('body')[0]
+      if (!this.$store.state.home.isMenuOpen) {
+        body.classList.toggle('overflow-hidden')
+      }
+      const modalData = this.story.steps[step].modal
+      this.$store.dispatch('modal/toggleModal', modalData)
     }
   },
   computed: {
-    isMenuOpen() {
-      return this.$store.state.home.isMenuOpen;
+    isMenuOpen () {
+      return this.$store.state.home.isMenuOpen
     },
-    steps() {
-      return this.story.steps.length;
+    steps () {
+      return this.story.steps.length
     },
-    currentStep() {
-      return this.$store.state.game.currentStep;
+    currentStep () {
+      return this.$store.state.game.currentStep
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -91,14 +91,13 @@ aside {
   width: 100%;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
-
+  height: calc(100vh - 59px);
   &.menu-open {
     transform: translateX(0);
   }
 
   @screen md {
-    @apply w-1/4;
-    position: relative;
+    @apply w-1/4 h-auto relative;
     transform: translateX(0);
   }
 }
@@ -113,11 +112,11 @@ aside {
       left: 50%;
       width: 80%;
       height: 80%;
-      transform: translate(-50%, -50%) scale(0,0);
-      transition: transform .3s ease;
+      transform: translate(-50%, -50%) scale(0, 0);
+      transition: transform 0.3s ease;
     }
     &.old:after {
-      transform: translate(-50%, -50%) scale(1,1);
+      transform: translate(-50%, -50%) scale(1, 1);
     }
   }
   .line {

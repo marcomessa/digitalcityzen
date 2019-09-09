@@ -23,7 +23,7 @@ html, body {
     }
 }
 .VueCarousel-navigation {
-    // position: absolute;
+    @apply hidden;
     .VueCarousel-navigation-button {
         z-index: 99;
         color: white;
@@ -35,6 +35,9 @@ html, body {
         &.VueCarousel-navigation-next {
             right: 40px;
         }
+    }
+    @screen md {
+        @apply block;
     }
 }
 

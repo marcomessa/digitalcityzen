@@ -49,6 +49,10 @@ export default {
   },
   methods: {
     toggleModal () {
+      const body = document.getElementsByTagName('body')[0]
+      if (!this.$store.state.home.isMenuOpen) {
+        body.classList.toggle('overflow-hidden')
+      }
       this.$store.dispatch('modal/toggleModal')
     },
     closeModal (event) {
@@ -79,13 +83,16 @@ export default {
 }
 
 .modal-container {
-  @apply w-2/3;
+  @apply w-4/5;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
+  @screen md {
+    @apply w-2/3;
+  }
   a {
     color: #ffcc00;
     font-weight: bold;

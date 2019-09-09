@@ -13,12 +13,13 @@ export default {
   name: 'menu-button',
   methods: {
     toggleMenu () {
+      document.getElementsByTagName('body')[0].classList.toggle('overflow-hidden')
       this.$store.dispatch('home/toggleMenu')
     }
   },
   computed: {
     isMenuOpen () {
-      console.log( 'test' );
+      console.log('test')
       return this.$store.state.home.isMenuOpen
     }
   }

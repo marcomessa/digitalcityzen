@@ -4,13 +4,13 @@
   "steps": [
     {
       "id": 1,
-      "title": "Titolo Step 1",
-      "description": "Andrea viene filmata da Sara mentre spiega qualcosa a un'aiutante. Andrea viene filmata da Sara mentre spiega qualcosa a un'aiutante.",
+      "title": "Inizio",
+      "description": "Andrea, la ragazza già studiosa della classe, aiuta Lucrezia a finire i compiti prima del suono della campanella. Non si accorge che la scena viene filmata da Sara e Mirko.",
       "frames": ["test_scene.jpg", "test_scene.jpg"],
       "bg": "#fff",
       "options": [
         {
-          "text": "Pluto",
+          "text": "Avanti",
           "score": 0,
           "goTo": 2
         }
@@ -23,18 +23,13 @@
     },
     {
       "id": 2,
-      "title": "Titolo Step 2",
-      "description": "Non visti, il bullo e i complici fanno circolare il video (gruppo WhatsApp/Facebook/etc.)",
+      "title": "Step 2",
+      "description": "Sara pubblica il video online. Ben presto il video diventa virale: in tutta la scuola non si parla d’altro.",
       "frames": ["test_scene.jpg", "test_scene.jpg"],
       "bg": "#000",
       "options": [
         {
-          "text": "Scelta 2A",
-          "score": 0,
-          "goTo": 3
-        },
-        {
-          "text": "Scelta 2B",
+          "text": "Avanti",
           "score": 0,
           "goTo": 3
         }
@@ -47,39 +42,261 @@
     },
     {
       "id": 3,
-      "title": "Titolo Step 3",
-      "description": "Gli altri compagni visualizzano il video, e la vittima, circolando nella scuola, si accorge che gli altri lo/a osservano commentando e ridendo di lui/lei.",
+      "title": "Step 3",
+      "description": "Andrea viene derisa. Sotto il video appaiono tanti commenti negativi e numerosi \"mi piace\" sotto gli insulti e le battutine di Sara.",
       "bg": "#000",
       "frames": ["test_scene.jpg", "test_scene.jpg"],
       "options": [
         {
-          "text": "Scelta 3A",
+          "text": "(non interviene nessuno)",
           "score": 0,
           "goTo": 4
         },
         {
-          "text": "Scelta 3B",
+          "text": "(qualcuno interviene)",
           "score": 0,
-          "goTo": 4
+          "goTo": 9
         }
       ]
     },
     {
       "id": 4,
-      "title": "Titolo Step 4",
-      "description": "La vittima visualizza il video e comprende il motivo dei commenti (e realizza anche il senso del video che il bullo gli/le ha girato).",
+      "title": "Step 4",
+      "description": "Tanti ragazzi vedono i commenti negativi ma non intervengono",
       "bg": "#000",
       "frames": ["test_scene.jpg", "test_scene.jpg"],
       "options": [
         {
-          "text": "Scelta 4A",
+          "text": "Andrea si chiude in se stessa",
           "score": 0,
-          "endId": 1
+          "goTo": 5
         },
         {
-          "text": "Scelta 4B",
+          "text": "Andrea risponde online",
+          "score": 0,
+          "goTo": 6
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Step 5",
+      "description": "Sempre più spesso Andrea inventa scuse per non andare a scuola.",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Avanti",
+          "score": 0,
+          "endId": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Step 6",
+      "description": "Andrea decide di rispondere online ai commenti",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Sara continua",
+          "score": 0,
+          "goTo": 7
+        },
+        {
+          "text": "Andrea e Sara empatizzano",
+          "score": 0,
+          "goTo": 8
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Step 7",
+      "description": "Sara continua a prendere in giro Andrea pubblicamente. Sara accresce la sua popolarità per i “mi piace” ricevuti e il supporto dei compagni.",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Avanti",
+          "score": 0,
+          "goTo": 5
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Step 8",
+      "description": "Andrea e Sara si incontrano. Andrea racconta a Sara come si sente. Sara intuisce la tristezza di Andrea e capisce di aver sbagliato",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Avanti",
           "score": 0,
           "endId": 2
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Step 9",
+      "description": "A qualcuno non piace quello che sta accadendo. Scegli tra Marina, Matteo e Luca",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Martina",
+          "score": 0,
+          "goTo": 10
+        },
+        {
+          "text": "Matteo",
+          "score": 0,
+          "goTo": 13
+        },
+        {
+          "text": "Luca",
+          "score": 0,
+          "goTo": 16
+        }
+        
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Step 10",
+      "description": "Martina decide di andare a parlare con Andrea, convinta che la cosa migliore sia aiutarla ad essere accettata dal gruppo",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Andrea si adegua e...",
+          "score": 0,
+          "goTo": 11
+        },
+        {
+          "text": "Andrea si adegua ma...",
+          "score": 0,
+          "goTo": 12
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Step 11",
+      "description": "Andrea rinuncia alla propria individualità e cerca di adeguarsi allo stile degli altri compagni. Ora non viene più preso in giro, ma in fondo in fondo non si sente felice…",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Avanti",
+          "score": 0,
+          "endId": 3
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Step 12",
+      "description": "Andrea rinuncia alla propria individualità e cerca di adeguarsi allo stile degli altri compagni. Ma a scuola l’aspetta una sorpresa… tutti i compagni si sono “secchionizzati”",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Avanti",
+          "score": 0,
+          "endId": 4
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Step 13",
+      "description": "Matteo non ci sta. Capisce che non è giusto quello che sta accadendo. Sente di dover fare qualcosa.",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Avanti",
+          "score": 0,
+          "goTo": 14
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Step 14",
+      "description": "Matteo salva gli screenshot degli insulti e va a parlare con Andrea. Le consiglia di rivolgersi a un adulto.",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Avanti",
+          "score": 0,
+          "goTo": 15
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Step 15",
+      "description": "Matteo accompagna Sara dalla preside, a cui mostrano gli screenshot. La preside chiama i genitori di Sara..",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Avanti",
+          "score": 0,
+          "endId": 5
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Step 16",
+      "description": "Luca vede il video e i commenti. Interviene online in difesa di Andrea.",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Luca ha successo",
+          "score": 0,
+          "goTo": 17
+        },
+        {
+          "text": "Luca fallisce",
+          "score": 0,
+          "goTo": 18
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Step 17",
+      "description": "Altri ragazzi e ragazze prendono esempio da Luca, si fanno coraggio ed esprimono pubblicamente il loro dissenso nei confronti del comportamento di Sara",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Avanti",
+          "score": 0,
+          "endId": 6
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Step 18",
+      "description": "Luca fallisce",
+      "bg": "#000",
+      "frames": ["test_scene.jpg", "test_scene.jpg"],
+      "options": [
+        {
+          "text": "Avanti",
+          "score": 0,
+          "goTo": 5
         }
       ]
     }
